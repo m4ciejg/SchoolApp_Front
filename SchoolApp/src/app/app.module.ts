@@ -12,6 +12,8 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+//import { FontAwesome} from './node_modules/FontAwesome';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     AddUserComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

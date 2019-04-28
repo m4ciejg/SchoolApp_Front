@@ -9,6 +9,8 @@ import { StudentsTeachers } from '../model/students-teachers';
 export class ApiService {
  // private BASE_URL = "http://localhost:8080";
   private ALL_USERS_URL = "http://localhost:8080/secretary/users";
+  private UPDATE_USERS_URL = "http://localhost:8080/secretary/users";
+  private DELETE_USERS_URL = "http://localhost:8080/secretary/users";
 
   constructor(private http: HttpClient) {
 
@@ -22,8 +24,13 @@ export class ApiService {
     return this.http.post(this.ALL_USERS_URL,user);
    }
 
-   //updateUser(user: StudentsTeachers): Observable<any>{
-    // return this.http.put(this.DELETE_URL, user);
-  // }
+   deleteUser(id: number): Observable<any>{
+     return this.http.delete(this.DELETE_USERS_URL +"/" + id);
+   }
 
+   //updateUser(user: StudentsTeachers): Observable<any>{
+    // return this.http.put(this.UPDATE_USERS_URL+'/'+ StudentsTeachers.id, user);
+   //}
+
+  // updateUser(user: StudentsTeachers): Obs
 }
