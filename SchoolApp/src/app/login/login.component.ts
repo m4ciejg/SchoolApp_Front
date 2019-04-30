@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin(){
-    if(this.loginService.authenticate(this.username, this.password)){
+   /* if(this.loginService.authenticate(this.username, this.password)){
       this.router.navigate(['/viewUsers']);
       this.invalidLogin = false;
       console.log("Udalo sie zalogowac");
@@ -28,5 +28,15 @@ export class LoginComponent implements OnInit {
       this.invalidLogin = true;
     }
   }
-
+*/
+  this.loginService.authenticate(this.username, this.password).subscribe(
+    data => {
+      this.router.navigate(["/viewUsers"]);
+      this.invalidLogin = false;
+    },
+    err => {
+      this.invalidLogin = true;
+    }
+  );
+}
 }
