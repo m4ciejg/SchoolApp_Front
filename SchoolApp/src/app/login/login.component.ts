@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
+import { StudentsTeachers } from '../model/students-teachers';
+import { TransferDataService } from '../services/transfer-data.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginComponent implements OnInit {
   invalidLogin = false;
 
   constructor(private loginService: AuthenticationService,
-              private router: Router) { }
+              private router: Router, private transferData: TransferDataService) { }
 
   ngOnInit() {
   }
@@ -31,12 +33,21 @@ export class LoginComponent implements OnInit {
 */
   this.loginService.authenticate(this.username, this.password).subscribe(
     data => {
-      this.router.navigate(["/viewUsers"]);
-      this.invalidLogin = false;
+      // Different routing for different user :)
+      if(sessionStorage.getItem('username') == 'sekretarka'){
+        this.router.navigate(["/viewUsers"]);
+        this.invalidLogin = false;
+      }else{
+        //Routing for headMaster
+        this.router.navigate(["/addUser"]);
+        this.invalidLogin = false;
+      }
+      
     },
     err => {
       this.invalidLogin = true;
     }
   );
 }
+
 }

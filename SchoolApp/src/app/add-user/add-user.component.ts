@@ -13,6 +13,7 @@ export class AddUserComponent implements OnInit {
     name: '',
     surname: '',
     occupation: '',
+    username: '',
     pesel: '',
     phoneNumber:'',
     address:'',

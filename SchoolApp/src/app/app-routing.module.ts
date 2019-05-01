@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:'', component: HomeComponent}, //default component to display
   {path:'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
+  //secretary, headMaster
   {path:'viewUsers', component: ViewUserComponent, canActivate:[AuthGuardService]},
   {path:'addUser', component: AddUserComponent, canActivate:[AuthGuardService]},
   {path:'updateUser',component: UpdateUserComponent, canActivate:[AuthGuardService]},
