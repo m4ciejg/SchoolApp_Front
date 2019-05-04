@@ -4,7 +4,7 @@
   <div class="column is-half">   
  <br>
     <!--Firt calid then send-->
-    <form #f="ngForm" (ngSubmit)="f.form.valid && send()" >
+    <form #f="ngForm" (ngSubmit)="f.form.valid && send() &&sendToLoginPasswordEntity()" >
     <!--Name input-->
     <div class="field">
     <label class="label">Name</label>

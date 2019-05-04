@@ -19,6 +19,10 @@
                 <input type="password" class="password" name="password" [(ngModel)]="password">
                 <!--Login method-->
                 <button (click)="checkLogin()">zaloguj</button> 
+                <!--If login failed-->
+                <div *ngIf="this.invalidLogin == true">
+                     <strong class="has-text-danger">Zły login lub hasło</strong>
+                    </div>
             </form></div>
             <a routerLink="/home"><i class="fas fa-arrow-left"></i>Powrót do strony głównej</a>
         </div>
