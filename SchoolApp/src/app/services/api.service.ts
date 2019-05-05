@@ -11,7 +11,7 @@ export class ApiService {
  // private BASE_URL = "http://localhost:8080";
   private ALL_USERS_URL = "http://localhost:8080/secretary/users";
   private DELETE_USERS_URL = "http://localhost:8080/secretary/users";
-  private ADD_LOGIN_URL = "http://localhost:8080/api/login";
+  private ADD_LOGIN_URL = "http://localhost:8080/login";
   constructor(private http: HttpClient) {
 
    }

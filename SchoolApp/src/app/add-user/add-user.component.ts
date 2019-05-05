@@ -14,18 +14,13 @@ export class AddUserComponent implements OnInit {
     name: '',
     surname: '',
     occupation: '',
-    username: '',
     pesel: '',
     phoneNumber:'',
     address:'',
     email:''
   };
 
-  login: LoginAndPassword = {
-    id: 0,
-    username: '',
-    password: ''
-  };
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -34,8 +29,8 @@ export class AddUserComponent implements OnInit {
   send(){
     this.apiService.addUser(this.model).subscribe(
       res => {
-          location.reload(); //reload page
-          alert("User added successfully");
+          alert("Urzytkownik został dodany");
+          location.reload();
       },
       err => {
         alert("Error while sending value");
@@ -43,16 +38,7 @@ export class AddUserComponent implements OnInit {
     );
 }
 
-  sendToLoginPasswordEntity(){
-    this.apiService.addLoginAndPassword(this.login).subscribe(
-      res => {
-
-      },
-      err => {
-        alert("Nie udalo sie wyslac loginu");
-      }
-    );
-  }
+ 
  //wypisz(event: any){
    //alert(this.model.occupation);
  //}

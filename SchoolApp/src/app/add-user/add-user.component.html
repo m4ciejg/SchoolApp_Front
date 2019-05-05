@@ -4,7 +4,7 @@
   <div class="column is-half">   
  <br>
     <!--Firt calid then send-->
-    <form #f="ngForm" (ngSubmit)="f.form.valid && send() &&sendToLoginPasswordEntity()" >
+    <form #f="ngForm" (ngSubmit)="f.form.valid && send()" >
     <!--Name input-->
     <div class="field">
     <label class="label">Name</label>
@@ -51,21 +51,6 @@
             </div>
           </div>
         </div>
-        <!--Username input-->
-    <div class="field">
-      <label class="label">Nazwa użytkownika</label>
-      <div class="control">
-        <input class="input" name="username" type="text" placeholder="nazwa użytkownika"
-        [(ngModel)]="model.username"
-        #username="ngModel"
-         [ngClass]="{'is-danger': f.submitted && username.invalid}"
-         required/>
-         <!--Div when surname error-->
-         <div *ngIf="f.submitted && username.invalid">
-            <div class="invalid-input" *ngIf="username.errors?.required">Field is required</div>
-         </div>
-      </div>
-      </div>
     <!--Pesel input-->
     <div class="field">
     <label class="label">Pesel</label>

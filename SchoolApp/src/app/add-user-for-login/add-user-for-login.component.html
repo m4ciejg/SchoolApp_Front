@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">   
+ <br>
+    <!--Firt valid then send-->
+    <form #f="ngForm" (ngSubmit)="f.form.valid && sendToLoginPasswordEntity()" >
+    <!--Username input-->
+    <div class="field">
+    <label class="label">Login</label>
+    <div class="control">
+      <input class="input" name="username" type="text" placeholder="Login"
+       [(ngModel)]="model.username"
+       #username="ngModel"
+       [ngClass]="{'is-danger': f.submitted && username.invalid}"
+       required/>
+       <!--Div when username error-->
+       <div *ngIf="f.submitted && username.invalid">
+          <div class="invalid-input" *ngIf="username.errors?.required">Pole jest wymagane</div>
+       </div>
+    </div>
+    </div>
+    <!--Password input-->
+    <div class="field">
+    <label class="label">Hasło</label>
+    <div class="control">
+      <input class="input" name="user_password" type="text" placeholder="password"
+      [(ngModel)]="model.user_password"
+      #user_password="ngModel"
+       [ngClass]="{'is-danger': f.submitted && user_password.invalid}"
+       required/>
+       <!--Div when password error-->
+       <div *ngIf="f.submitted && user_password.invalid">
+          <div class="invalid-input" *ngIf="user_password.errors?.required">Field is required</div>
+       </div>
+    </div>
+    </div>
+    <!--Submit button-->
+    <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Dodaj
+      </button>
+    </p>
+    </div>
+    </form>
+  </div>
+</div>

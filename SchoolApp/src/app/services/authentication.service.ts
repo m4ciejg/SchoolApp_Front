@@ -15,7 +15,6 @@ export class AuthenticationService {
   constructor(private httpClient: HttpClient) { }
 
   authenticate(username, password){
-    
     /*  Basic function without auhentication and with hard coded user and password
     if(username == "sekretarka" || username == this.dyrektor && password == "password"){
       sessionStorage.setItem('username', username);

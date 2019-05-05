@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { BasicAuthHttpInterceptorService } from './services/basic-auth-http-interceptor.service';
+import { AddUserForLoginComponent } from './add-user-for-login/add-user-for-login.component';
 //import { FontAwesome} from './node_modules/FontAwesome';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BasicAuthHttpInterceptorService } from './services/basic-auth-http-inte
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    AddUserForLoginComponent
   ],
   imports: [
     BrowserModule,
