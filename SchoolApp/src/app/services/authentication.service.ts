@@ -22,14 +22,15 @@ export class AuthenticationService {
     }else {
       return false;
     }*/
- 
+    console.log("Username " + username)
+    console.log("password " + password)
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get<User>('http://localhost:8080/secretary/validateLogin',{headers}).pipe(
      map(
        userData => {
         //add user to seesion storage
         sessionStorage.setItem('username',username);
-        //
+        //add to session storage basic authorization
          let authString = 'Basic ' + btoa(username + ':' + password);
         sessionStorage.setItem('basicauth', authString);
         return userData;

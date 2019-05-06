@@ -35,4 +35,9 @@ export class MenuComponent implements OnInit {
     console.log("Udalo sie wylogowac");
   }
 
+  isAdmin(){
+    if(sessionStorage.getItem('username') === 'dyrektor' || sessionStorage.getItem('username') === 'sekretarka'){
+      return true
+    }
+  }
 }
