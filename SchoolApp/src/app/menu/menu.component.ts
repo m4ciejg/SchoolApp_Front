@@ -40,4 +40,16 @@ export class MenuComponent implements OnInit {
       return true
     }
   }
+  
+  isStudent(){
+    if(sessionStorage.getItem('username') === 'uczen'){
+      return true
+    }
+  }
+
+  isTeacher(){
+    if(sessionStorage.getItem('username') === 'nauczyciel'){
+      return true
+    }
+  }
 }

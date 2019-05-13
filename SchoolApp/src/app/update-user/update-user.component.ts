@@ -9,7 +9,9 @@ import { Alert } from 'selenium-webdriver';
   styleUrls: ['./update-user.component.css']
 })
 export class UpdateUserComponent implements OnInit {
+
   users: StudentsTeachers[] = [];
+  
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -26,10 +28,10 @@ export class UpdateUserComponent implements OnInit {
       } 
     );
   }
+
   updateUsers(updatedUser: StudentsTeachers){
     this.apiService.addUser(updatedUser).subscribe(
-      res => {
-         
+      res => {   
       },
       err => {
         alert("Error while sending value");

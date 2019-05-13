@@ -1,4 +1,28 @@
 <app-menu></app-menu>
-<p>
-  teacher-home works!
-</p>
+
+<br><br><br><br>
+<div class="columns  is-centered ">
+    <div class="column is-12 is-offset-3">
+<table class="table">
+    <thead>
+      <tr>
+        <th> Imie</th>
+        <th> Nazwisko</th>
+        <th> Ocena</th>
+        <th> Komentarz</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{users.name}}
+      <tr *ngFor="let user of users">
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.name" (change)="updateUsers(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.surname" (change)="updateUsers(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.pesel" (change)="updateUsers(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.phoneNumber" (change)="updateUsers(user)"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<app-footer></app-footer>

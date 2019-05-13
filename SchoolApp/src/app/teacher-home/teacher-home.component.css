@@ -1,0 +1,300 @@
+/* font-family: 'Roboto', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+nav{
+    max-width: 1920px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 0 0 15px 15px;
+    background-color: #555;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    float: left;
+    text-align: center;
+}
+
+ul li:nth-of-type(1){
+    margin-left: 55%;
+}
+
+ul li a{
+    position: relative;
+    display: block;
+    padding: 0 30px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 26px;
+    color: #f3f3f3;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'roboto', 'arial', sans-serif;
+    overflow: hidden;
+}
+
+ul li a::before{
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 100%;
+    width: 100%;
+    height: 4px;
+    background-color: #f3f3f3;
+    transition: .2s linear;
+}
+
+ul li a::after{
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background-color: #f3f3f3;
+    transition: .2s linear;
+}
+
+ul li a:hover::before{
+    left: -90%;
+}
+
+ul li a:hover::after{
+    left: 90%;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 1920px;
+    margin: 15px auto;
+}
+
+.id{
+    position: relative;
+    width: 100%;
+    min-height: 30vh;
+    border-radius: 15px;
+}
+
+.info{
+    position: absolute;
+    width: calc(100% - 80px);
+    height: 50px;
+    top: 0;
+    background-color: #555;
+    font-size: 24px;
+    font-family: 'roboto', 'arial', sans-serif;
+    top: 0;
+    left: 80px;
+    border-radius: 15px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.info span{
+     position: absolute;
+     width: 50%;
+     cursor: default;
+     text-align: center;
+}
+
+.info span:nth-of-type(2){
+    position: absolute;
+    width: 50%;
+    left: 50%;
+}
+
+.grades{
+    position: relative;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.add{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #555;
+    font-size: 30px;
+    border-radius: 50%;
+    color: white;
+    transition: .3s linear;
+    z-index: 2;
+}
+
+.addMark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #555;
+    font-size: 30px;
+    border-radius: 15px 0 0 15px;
+    color: white;
+    transition: .3s linear;
+    opacity: 0;
+    transform: translateX(0);
+    z-index: 1; 
+}
+
+.edit{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #555;
+    font-size: 30px;
+    border-radius: 0;
+    color: white;
+    transition: .3s linear;
+    opacity: 0;
+    transform: translateX(50px);
+    z-index: 1;
+}
+
+.delete{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #555;
+    font-size: 30px;
+    border-radius: 0 15px 15px 0;
+    color: white;
+    transition: .3s linear;
+    transform: translateX(100px);
+    opacity: 0;
+    z-index: 1;
+}
+
+.addMark:hover{
+    background-color: white;
+    color: #555;
+}
+
+.edit:hover{
+    background-color: white;
+    color: #555;
+}
+
+.delete:hover{
+    background-color: white;
+    color: #555;
+}
+
+.add i{
+    transition: .3s linear;
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.add:hover{
+    background-color: white;
+    color: #555;
+}
+
+.addClick{
+    opacity: 1;
+    transform: translateX(50px);
+    cursor: pointer;
+}
+
+.editClick{
+    opacity: 1;
+    transform: translateX(100px);
+    cursor: pointer;
+}
+
+.deleteClick{
+    opacity: 1;
+    transform: translateX(150px);
+    cursor: pointer;
+}
+
+.add:hover i{
+    transform: rotate(3600deg);
+}
+
+
+.name span{
+    position: absolute;
+    margin: 15px 0;
+    width: calc(50% - 80px/2);
+    height: 50px;
+    top: 0;
+    left: 80px;
+    line-height: 50px;
+    background-color: #999;
+    border-radius: 15px;
+    color: white;
+    font-family: 'roboto', 'arial', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    cursor: default;
+}
+
+.mark span{
+    position: absolute;
+    display: inline-block;
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: calc(50% + 80px/2 + 15px);
+    line-height: 50px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'roboto', 'arial', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    cursor: default;
+}
+
+.one{ 
+    background-color: red;
+}
+
+.two{
+    background-color: pink;
+}
+
+.three{
+    background-color: orange;
+}
+
+.four{
+    background-color: yellowgreen;
+}
+
+.five{
+    background-color: green;
+}

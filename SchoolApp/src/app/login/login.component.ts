@@ -34,15 +34,23 @@ export class LoginComponent implements OnInit {
   this.loginService.authenticate(this.username, this.password).subscribe(
     data => {
       // Different routing for different user :)
-      if(sessionStorage.getItem('username') == 'sekretarka'){
+      if(sessionStorage.getItem('username') == 'sekretarka' || sessionStorage.getItem('username') == 'dyrektor'){
         this.router.navigate(["/viewUsers"]);
         this.invalidLogin = false;
       }else{
-        //Routing for headMaster
-        this.router.navigate(["/addUser"]);
+        this.router.navigate(["/teacherhome"]);
         this.invalidLogin = false;
       }
-      
+  /*  if(sessionStorage.getItem('username') == 'uczen') {
+        //Routing for headMaster
+        this.router.navigate(["/studentHome"]); 
+        this.invalidLogin = false;
+      }
+      if(sessionStorage.getItem('username') == 'nauczyciel') {
+        //Routing for headMaster
+        this.router.navigate(["/teacherHome"]); //?What if I add more teachers
+        this.invalidLogin = false;
+      }*/
     },
     err => {
       this.invalidLogin = true;
