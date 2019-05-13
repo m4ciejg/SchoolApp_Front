@@ -17,6 +17,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { BasicAuthHttpInterceptorService } from './services/basic-auth-http-interceptor.service';
 import { AddUserForLoginComponent } from './add-user-for-login/add-user-for-login.component';
 import { StudentHomeComponent } from './student-home/student-home.component';
+import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
 //import { FontAwesome} from './node_modules/FontAwesome';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { StudentHomeComponent } from './student-home/student-home.component';
     LoginComponent,
     UpdateUserComponent,
     AddUserForLoginComponent,
-    StudentHomeComponent
+    StudentHomeComponent,
+    TeacherHomeComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddUserForLoginComponent } from './add-user-for-login/add-user-for-login.component';
 import { StudentHomeComponent } from './student-home/student-home.component';
+import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent}, //default component to display
@@ -20,9 +21,10 @@ const routes: Routes = [
   {path:'updateUser',component: UpdateUserComponent, canActivate:[AuthGuardService]},
   {path:'addUserForLogin', component: AddUserForLoginComponent, canActivate:[AuthGuardService]},
   //Student
-  {path:'studentHome', component:StudentHomeComponent},
-
+  {path:'studentHome', component:StudentHomeComponent, canActivate:[AuthGuardService]},
   //Teacher
+  {path:'teacherHome', component:TeacherHomeComponent, canActivate:[AuthGuardService]},
+  //NotFound
   {path:'**', component:NotFoundComponent}
 ];
 

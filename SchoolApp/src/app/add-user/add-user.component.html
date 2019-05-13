@@ -4,7 +4,7 @@
   <div class="column is-half">   
  <br>
     <!--Firt calid then send-->
-    <form #f="ngForm" (ngSubmit)="f.form.valid && send()" >
+    <form #f="ngForm" (ngSubmit)="f.form.valid  && sendToLoginPasswordEntity(); send()" >
     <!--Name input-->
     <div class="field">
     <label class="label">Name</label>
@@ -35,6 +35,22 @@
        </div>
     </div>
     </div>
+    <!--username input-->
+    <div class="field">
+      <label class="label">Username</label>
+      <div class="control">
+        <input class="input" name="surname" type="text" placeholder="username"
+        [(ngModel)]="model.username"
+        [(ngModel)]="login.username"
+        #username="ngModel"
+         [ngClass]="{'is-danger': f.submitted && username.invalid}"
+         required/>
+         <!--Div when surname error-->
+         <div *ngIf="f.submitted && username.invalid">
+            <div class="invalid-input" *ngIf="username.errors?.required">Field is required</div>
+         </div>
+      </div>
+      </div>
         <!--Email input-->
         <div class="field">
           <label class="label">Email</label>
@@ -57,6 +73,7 @@
     <div class="control">
       <input class="input" name="pesel" placeholder="pesel"
       [(ngModel)]="model.pesel"
+      [(ngModel)]="login.user_password"
       #pesel="ngModel"
       [ngClass]="{'is-danger': f.submitted && pesel.invalid}"
       required />
@@ -97,14 +114,6 @@
       </div>
       </div>
       <!--Checkbox-->
-      <div class="field">
-        <input class="is-checkradio" id="exampleRadioInline1" type="radio" name="occupation"
-         value="student" [(ngModel)]="model.occupation" >
-        <label for="exampleRadioInline1">Student   </label>
-        <input class="is-checkradio" id="exampleRadioInline2" type="radio" name="occupation" 
-        value="teacher" [(ngModel)]="model.occupation"  >
-        <label for="exampleRadioInline2">Teacher</label>
-      </div>
     <!--Submit button-->
     <div class="field">
     <p class="control">

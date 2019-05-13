@@ -13,11 +13,17 @@ export class AddUserComponent implements OnInit {
     id: 0,
     name: '',
     surname: '',
-    occupation: '',
+    username: '',
     pesel: '',
     phoneNumber:'',
     address:'',
     email:''
+  };
+
+  login: LoginAndPassword = {
+    id:0,
+    username:'',
+    user_password:''
   };
 
 
@@ -29,13 +35,26 @@ export class AddUserComponent implements OnInit {
   send(){
     this.apiService.addUser(this.model).subscribe(
       res => {
-          alert("Urzytkownik został dodany");
-          location.reload();
+          alert("Użytkownik został dodany do bazy danych");
+          //location.reload();
       },
       err => {
         alert("Error while sending value");
       }
     );
+} 
+
+sendToLoginPasswordEntity(){
+  this.apiService.addLoginAndPassword(this.login).subscribe(
+    res => {
+     // location.reload(); //reload page
+      alert("Konto uzytkownika zostało utworzone")
+      location.reload();
+    },
+    err => {
+      alert("Sth go wrong");
+    }
+  );
 }
 
  

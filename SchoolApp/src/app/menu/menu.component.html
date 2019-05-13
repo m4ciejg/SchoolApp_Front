@@ -13,11 +13,11 @@
 
   <div id="navbarBasicExample" class="navbar-menu" #navMenu>
     <div class="navbar-start">
-      <a class="navbar-item" routerLink="/home">
+      <a class="navbar-item" routerLink="/home" >
         Home
       </a>
 
-      <a class="navbar-item" routerLink="/addUser">
+      <a *ngIf="isAdmin()" class="navbar-item" routerLink="/addUser">
         Dodaj użytkownika do bazy 
       </a>
       <a class="navbar-item" routerLink="/updateUser">
@@ -29,9 +29,7 @@
       <a class="navbar-item" routerLink="/addUserForLogin">
         Dodaj konto ucznia
       </a>
-      <a class="navbar-item" routerLink="/addUserForLogin">
-        Dodaj konto ucznia
-      </a>
+     
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
