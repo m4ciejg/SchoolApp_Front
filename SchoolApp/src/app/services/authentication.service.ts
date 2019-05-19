@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import { LoginAndPassword } from '../model/login-and-password';
+import { ApiService } from './api.service';
+
 export class User{
+
   constructor(public status: String) {
 
    }
@@ -9,21 +13,17 @@ export class User{
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
-    //dyrektor = "dyrektor";
-    //dyrektorhaslo = "password";
-  constructor(private httpClient: HttpClient) { }
 
-  authenticate(username, password){
-    /*  Basic function without auhentication and with hard coded user and password
-    if(username == "sekretarka" || username == this.dyrektor && password == "password"){
-      sessionStorage.setItem('username', username);
-      return true;
-    }else {
-      return false;
-    }*/
-    console.log("Username " + username)
-    console.log("password " + password)
+export class AuthenticationService {
+
+  //Tabel with username and password
+  loginData: LoginAndPassword[] = []
+
+  constructor(private httpClient: HttpClient,
+              private apiService: ApiService) { }
+
+    /*Function with basic header authentication (doesn't work with my rest api jdbc authentication)
+
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get<User>('http://localhost:8080/secretary/validateLogin',{headers}).pipe(
      map(
@@ -36,17 +36,20 @@ export class AuthenticationService {
         return userData;
        }
      )
-
     );
-  }
+  }*/
 
   isUserLoggedIn(){
     let user = sessionStorage.getItem('username');
+    console.log("Hej to ja authentication service aktualny uresname to:" + user)
     console.log(!(user === null));
     return !(user === null);
   }
 
   logOut(){
     sessionStorage.removeItem('username');
+    sessionStorage.removeItem('id');
   }
+
+  
 }

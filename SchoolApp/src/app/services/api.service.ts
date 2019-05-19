@@ -15,7 +15,8 @@ export class ApiService {
   constructor(private http: HttpClient) {
 
    }
-
+   //###########USERS INFROMATION##################
+   //method to get Users personal information 
    getAllUsers(): Observable<StudentsTeachers[]>{
     return this.http.get<StudentsTeachers[]>(this.ALL_USERS_URL);
    }
@@ -27,10 +28,26 @@ export class ApiService {
    deleteUser(id: number): Observable<any>{
      return this.http.delete(this.DELETE_USERS_URL +"/" + id);
    }
+   
+   getUserPersonalInfoById(id: number): Observable<any>{
+     return this.http.get(this.ALL_USERS_URL + "/" + id)
+   }
+
+   //##############LOGIN AND PASSWORD###########
+   
+   //method to get login and passwod from rest end point as plain text 
+   getLoginandPassword():Observable<LoginAndPassword[]>{
+    return this.http.get<LoginAndPassword[]>(this.ADD_LOGIN_URL);
+   }
 
    addLoginAndPassword(login: LoginAndPassword): Observable<any>{
     return this.http.post(this.ADD_LOGIN_URL, login);
    }
+
+   getUserById(id: number): Observable<any>{
+    return this.http.get(this.ADD_LOGIN_URL +"/" + id);
+  }
+
 
    //updateUser(user: StudentsTeachers): Observable<any>{
     // return this.http.put(this.UPDATE_USERS_URL+'/'+ StudentsTeachers.id, user);

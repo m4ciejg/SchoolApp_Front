@@ -4,7 +4,7 @@
   <div class="column is-half">   
  <br>
     <!--Firt calid then send-->
-    <form #f="ngForm" (ngSubmit)="f.form.valid  && sendToLoginPasswordEntity(); send()" >
+    <form #f="ngForm" (ngSubmit)="f.form.valid  &&  send(); sendToLoginPasswordEntity();" > <!--TODO trzeba jakos naprawic to one to one zeby sie udalo dodac uzytkownika do logowania-->
     <!--Name input-->
     <div class="field">
     <label class="label">Name</label>
@@ -40,7 +40,6 @@
       <label class="label">Username</label>
       <div class="control">
         <input class="input" name="surname" type="text" placeholder="username"
-        [(ngModel)]="model.username"
         [(ngModel)]="login.username"
         #username="ngModel"
          [ngClass]="{'is-danger': f.submitted && username.invalid}"
@@ -110,6 +109,21 @@
       <!--Div when address error-->
       <div *ngIf="f.submitted && address.invalid">
         <div class="invalid-input" *ngIf="address.errors?.required">Field is required</div>
+      </div>
+      </div>
+      </div>
+      <!--English level group input-->
+    <div class="field">
+      <label class="label">Grupa</label>
+      <div class="control">
+        <input class="input" name="english_group" placeholder="grupa" 
+        [(ngModel)]="model.english_group"
+        #english_group="ngModel" 
+        [ngClass]="{'is-danger': f.submitted && english_group.invalid}"
+        required />
+      <!--Div when group error-->
+      <div *ngIf="f.submitted && english_group.invalid">
+        <div class="invalid-input" *ngIf="english_group.errors?.required">Field is required</div>
       </div>
       </div>
       </div>

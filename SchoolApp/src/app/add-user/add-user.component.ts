@@ -13,17 +13,19 @@ export class AddUserComponent implements OnInit {
     id: 0,
     name: '',
     surname: '',
-    username: '',
     pesel: '',
     phoneNumber:'',
     address:'',
-    email:''
+    email:'',
+    english_group:''
   };
 
   login: LoginAndPassword = {
-    id:0,
+    id: 0,
     username:'',
-    user_password:''
+    user_password:'',
+    grade:'',
+    comment:''
   };
 
 
@@ -35,11 +37,11 @@ export class AddUserComponent implements OnInit {
   send(){
     this.apiService.addUser(this.model).subscribe(
       res => {
-          alert("Użytkownik został dodany do bazy danych");
+          alert("Użytkownik został dodany do bazy danych z informacjami");
           //location.reload();
       },
       err => {
-        alert("Error while sending value");
+        alert("Nie udało się dodać użytkownika do bazy danych");
       }
     );
 } 
@@ -49,10 +51,10 @@ sendToLoginPasswordEntity(){
     res => {
      // location.reload(); //reload page
       alert("Konto uzytkownika zostało utworzone")
-      location.reload();
+      //location.reload();
     },
     err => {
-      alert("Sth go wrong");
+      alert("Nie udało się utworzyć konta");
     }
   );
 }

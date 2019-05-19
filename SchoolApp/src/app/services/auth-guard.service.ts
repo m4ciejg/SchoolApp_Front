@@ -19,4 +19,10 @@ export class AuthGuardService implements CanActivate {
     this._router.navigate(['/login']);
     return false;
   }
+
+  isUserLoggedIn(){
+    let user = sessionStorage.getItem('username');
+    console.log(!(user === null));
+    return !(user === null);
+  }
 }

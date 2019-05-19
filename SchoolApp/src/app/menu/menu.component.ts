@@ -42,13 +42,13 @@ export class MenuComponent implements OnInit {
   }
   
   isStudent(){
-    if(sessionStorage.getItem('username') === 'uczen'){
+    if(sessionStorage.getItem('username').startsWith('uczen')){
       return true
     }
   }
 
   isTeacher(){
-    if(sessionStorage.getItem('username') === 'nauczyciel'){
+    if(sessionStorage.getItem('username').startsWith('nauczyciel')){
       return true
     }
   }

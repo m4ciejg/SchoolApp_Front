@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentsTeachers } from '../model/students-teachers';
+import { LoginAndPassword } from '../model/login-and-password';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-student-home',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentHomeComponent implements OnInit {
 
-  constructor() { }
+  users: StudentsTeachers[] = []
+  grade: LoginAndPassword[] = []
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
+    this.getPersonalInfoById()
+    this.getGradeById()
   }
 
+  getPersonalInfoById(){
+    this.apiService.getUserPersonalInfoById(Number(sessionStorage.getItem('id'))).subscribe(
+      res => {
+        this.users = res;
+      },
+      err =>{
+        alert("Nie udało się pobrać Twoich personalnych informacji")
+      }
+    );
+  }
+  
+
+  getGradeById(){
+    this.apiService.getUserById(Number(sessionStorage.getItem('id'))).subscribe(
+      res => {
+        this.grade = res;
+      },
+      err =>{
+        alert("Nie udało się pobrać ocen")
+      }
+    );
+  }
 }

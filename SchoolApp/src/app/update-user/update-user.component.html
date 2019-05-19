@@ -9,7 +9,6 @@
         <th> Id</th>
         <th> Name</th>
         <th> Surname</th>
-        <th> Role</th>
         <th> Phone</th>
         <th> Address</th>
         <th> Email</th>
@@ -21,7 +20,6 @@
         <th>{{user.id}}</th>
         <td><input class=" input-label is-small" type="text" [(ngModel)]="user.name" (change)="updateUsers(user)"></td>
         <td><input class="input-label is-small" type="text" [(ngModel)]="user.surname" (change)="updateUsers(user)"></td>
-        <td><input class="input-label is-small" type="text" [(ngModel)]="user.occupation" (change)="updateUsers(user)"></td>
         <td><input class="input-label is-small" type="text" [(ngModel)]="user.phoneNumber" (change)="updateUsers(user)"></td>
         <td><input class="input-label is-small" type="text" [(ngModel)]="user.address" (change)="updateUsers(user)"></td>
         <td><input class="input-label is-small" type="text" [(ngModel)]="user.email" (change)="updateUsers(user)"></td>

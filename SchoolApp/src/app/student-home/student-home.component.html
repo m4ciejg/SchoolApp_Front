@@ -1,4 +1,35 @@
 <app-menu></app-menu>
-<p>
-  student-home works!
-</p>
+
+
+  <section class="hero is-medium is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Witaj {{users.name}} {{users.surname}}
+        </h1>
+        <h2 class="subtitle">
+          Miło że wróciłeś, Twoje oceny są poniżej
+        </h2>
+      </div>
+    </div>
+<br><br><br>
+    <div class="columns  is-centered ">
+      <div class="column is-10 is-offset-3">
+  <table class="table">
+      <thead>
+        <tr>
+          <th> Ocena</th>
+          <th> Opis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let g of grade">
+          <th>{{g.grade}}</th>
+          <td>{{g.comment}}</td> 
+      </tr>
+  
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </section>

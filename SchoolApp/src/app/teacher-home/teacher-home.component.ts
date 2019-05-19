@@ -3,6 +3,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { StudentsTeachers } from '../model/students-teachers';
 import { ApiService } from '../services/api.service';
+import { LoginAndPassword } from '../model/login-and-password';
 
 @Component({
   selector: 'app-teacher-home',
@@ -11,8 +12,9 @@ import { ApiService } from '../services/api.service';
 })
 export class TeacherHomeComponent implements OnInit {
 
-  users: StudentsTeachers[] = [];
-  
+  users: StudentsTeachers[] = []
+  grade: LoginAndPassword[] = []
+  ocena
   constructor(private authentication: AuthenticationService,
               private router: Router,
               private apiService: ApiService) { }
@@ -21,11 +23,6 @@ export class TeacherHomeComponent implements OnInit {
     this.getAllUsers()
   }
 
-  logOut(){
-    this.authentication.logOut()
-    this.router.navigate(['/home'])
-    console.log("Udalo sie wylogowac")
-  }
 
   public getAllUsers(){
     this.apiService.getAllUsers().subscribe(
@@ -33,7 +30,7 @@ export class TeacherHomeComponent implements OnInit {
         this.users = res;
       },
       err =>{
-        alert("Shit happend");
+        alert("Nie udało się pobrać uczniów");
       } 
     );
   }
@@ -47,6 +44,10 @@ export class TeacherHomeComponent implements OnInit {
       }
     );
   }
-  
+
+  dodajOcene(g: LoginAndPassword){
+    let odp = prompt("Podaj ocenę jaką chcesz wstawić", "2")
+    this.ocena = odp
+  }
 
 }
