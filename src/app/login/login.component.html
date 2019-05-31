@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <title>SUPER NUMBUS 2000</title>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="login">
+           <div class="form"> <form>
+                <h1>Witaj, miło Cię widzieć!</h1>
+                <p>Nazwa użytkownika</p>
+                <input type="text" class="log" name="username" [(ngModel)]="username">
+                <p>Hasło</p>
+                <input type="password" class="password" name="password" [(ngModel)]="password">
+                <!--Login method-->
+                <button (click)="checkLogin2()">zaloguj</button> 
+                <!--If login failed-->
+                <div *ngIf="this.invalidLogin == true">
+                     <strong class="has-text-danger">Zły login lub hasło</strong>
+                    </div>
+            </form></div>
+            <a routerLink="/home"><i class="fas fa-arrow-left"></i>Powrót do strony głównej</a>
+        </div>
+        <div class="photo"><h1>Dziennik Super Nimbus 2000</h1></div>
+    </div>
+</body>
+</html>

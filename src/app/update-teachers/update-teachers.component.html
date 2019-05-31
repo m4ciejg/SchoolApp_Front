@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+
+<br><br><br><br>
+<div class="columns  is-centered ">
+    <div class="column is-12 is-offset-3">
+<table class="table">
+    <thead>
+      <tr>
+        <th> Imię</th>
+        <th> Nazwisko</th>
+        <th> Numer telefonu</th>
+        <th> Adres</th>
+        <th> Email</th>
+        <th class="has-text-danger">Usuń</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><input class=" input-label is-small" type="text" [(ngModel)]="user.name" (change)="updateUsers(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.surname" (change)="updateUsers(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.phoneNumber" (change)="updateUsers(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.address" (change)="updateUsers(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.email" (change)="updateUsers(user)"></td>
+        <p class="buttons">
+               <a (click)="deleteUser(user)"><span class="button is-danger">Usuń</span></a>
+        </p>    
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<app-footer></app-footer>

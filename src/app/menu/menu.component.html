@@ -1,0 +1,51 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" routerLink="/home">
+      <h1><strong>DĄBEK</strong></h1>
+    </a>
+
+
+    <a (click)="toggleNavbar()" role="button" #navBurger class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu" #navMenu>
+    <div class="navbar-start">
+      <a *ngIf="isAdmin()" class="navbar-item" routerLink="/addTeacher">
+        Dodaj nauczyciela do bazy 
+      </a>
+      <a *ngIf="isAdmin()" class="navbar-item" routerLink="/addUser"> <!--todo zrobic tablice dla nauczycieli i uczniow oddzielna-->
+        Dodaj ucznia do bazy 
+      </a>
+      <a *ngIf="isAdmin()" class="navbar-item" routerLink="/updateUser">
+        Modyfikacja ucznia
+      </a>
+      <a *ngIf="isAdmin()" class="navbar-item" routerLink="/updateTeacher"> <!--todo zrobic skrypty i dodać routing i dodac nowe koncowki do api-->
+        Modyfikacja nauczyciela
+      </a>
+      <a *ngIf="isAdmin()" class="navbar-item" routerLink="/viewUsers">
+        Uczniowie
+      </a>
+      <a *ngIf="isAdmin()" class="navbar-item" routerLink="/viewTeacher">  <!--todo zrobic skrypty i dodać routing i dodac nowe koncowki do api-->
+        Nauczyciele
+      </a>
+      <a *ngIf="isStudent()" class="navbar-item" routerLink="/studentHome">
+        Uczen
+      </a>
+      <a *ngIf="isTeacher()" class="navbar-item" routerLink="/teacherHome">
+        Nauczyciel
+      </a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" type="button" (click)="logOut()">
+            <strong>Wyloguj</strong>
+          </a>     
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

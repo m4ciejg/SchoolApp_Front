@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+
+<br><br><br><br>
+<div class="columns  is-centered ">
+    <div class="column is-10 is-offset-3">
+<table class="table">
+    <thead>
+      <tr>
+        <th> Imię</th>
+        <th> Nazwisko</th>
+        <th> Numer telefonu</th>
+        <th> Adres</th>
+        <th> Email</th>
+        <th> Grupa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.surname}}</td>
+        <td>{{user.phoneNumber}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.english_group}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+
+<br><br><br><br>
+<div class="columns  is-centered ">
+    <div class="column is-12 is-offset-3">
+<table class="table">
+    <thead>
+      <tr>
+        <th> Imie</th>
+        <th> Nazwisko</th>
+        <th> Srednia ocen</th>
+        <th> Dodaj ocenę</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.surname}}</td>
+        <td>3.2</td>
+        <p class="buttons">
+          <a (click)="dodajOcene(user)"><span class="button is-warning">Dodaj</span></a>
+        </p>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<app-footer></app-footer>

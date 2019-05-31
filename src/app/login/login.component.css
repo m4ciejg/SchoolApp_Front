@@ -1,0 +1,279 @@
+    /* font-family: 'Roboto', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body{
+    font-family: 'roboto', 'arial', sans-serif;
+}
+
+header{
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 100vh;
+    background-image: url("/assets/img/szkola.jpg");
+    background-position: center 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header h1{
+    position: absolute;
+    top: 5vh;
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, .65);
+    color: white;
+    
+}
+
+header a{
+    position: absolute;
+    bottom: 7vh;
+    right: 7%;
+    padding: 20px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, .65);
+    border: 2px solid white;
+    color: white;
+    transition: .3s;
+}
+
+header a:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.levels{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.levels h1{
+    margin: 50px;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.levels .levelgap{
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    padding: 30px 30px;
+    transition: .3s;
+}
+
+.levels .levelgap:hover{
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+.levels .levelgap h1{
+    font-size: 32px;
+}
+
+.levels .levelgap i{
+    font-size: 50px;
+}
+
+.levels .levelgap p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+footer{
+    margin-top: 60px;
+    padding: 30px 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+
+.login{
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 100vh;
+}
+
+.login .form{
+    width: 80%;
+    margin: 7% auto 0;
+}
+
+.login .form input{
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 10px;
+    transition: .3s;
+}
+
+.login .form input:focus{
+    background-color: #eee;
+    outline: none;
+    box-shadow: 0 0 5px royalblue;;
+}
+
+.login p{
+    font-size: 24px;
+    text-indent: 15px;
+    margin-bottom: 10px;
+}
+
+.login button{
+    width: 100%;
+    margin-top: 15px;
+    color: white;
+    background-color: black;
+    font-size: 24px;
+    padding: 10px 0;
+    border: 2px solid black;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: .3s;
+    letter-spacing: 2px;
+}
+
+.login button:hover{
+    cursor: pointer;
+    background-color: #eee;
+    color: black;
+}
+
+.login h1{
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.login a{
+    position: absolute;
+    display: block;
+    bottom: 5vh;
+    left: 10%;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    transition: .1s;
+}
+
+.login i{
+    margin-right: 10px;
+}
+
+.login a:hover{
+    color: black;
+}
+
+
+
+.photo{
+    position: relative;
+    float: left;
+    width: 70%;
+    height: 100vh;
+    background-image: url("/assets/img/szkola.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.photo h1{
+    top: 5vh;
+    width: 100%;
+    text-align: right;
+    padding: 15px 60px;
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, .65);
+    text-transform: uppercase;
+}
+
+@media (max-width: 1279px){
+    header h1{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1023px){
+    
+    .levels .levelgap{
+        width: 100%;
+    }
+
+    .levels .levelgap i{
+        font-size: 100px;
+    }
+
+    .levels .levelgap p{
+        font-size: 32px;
+    }
+
+    .login{
+        width: 100%;
+    }
+    .photo{
+        display: none;
+    }
+}
+
+@media (max-width: 539px){
+    header h1{
+        font-size: 20px;
+    }
+
+    header button{
+        font-size: 16px;
+    }
+
+    .levels h1{
+        font-size: 20px;
+    }
+    
+    .levels .levelgap h1{
+        font-size: 20px;
+    }
+
+    .levels .levelgap i{
+        font-size: 80px;
+    }
+
+    .levels .levelgap p{
+        font-size: 20px;
+    }
+
+    footer{
+        font-size: 10px;
+    }
+
+    .login{
+        width: 100%;
+    }
+}

@@ -1,0 +1,145 @@
+<app-menu></app-menu>
+
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">   
+ <br>
+    <!--Firt calid then send-->
+    <form #f="ngForm" (ngSubmit)="f.form.valid  &&  send(); sendToLoginPasswordEntity();" > <!--TODO trzeba jakos naprawic to one to one zeby sie udalo dodac uzytkownika do logowania-->
+    <!--Name input-->
+    <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input class="input" name="name" type="text" placeholder="Name"
+       [(ngModel)]="model.name"
+       #name="ngModel"
+       [ngClass]="{'is-danger': f.submitted && name.invalid}"
+       required/>
+       <!--Div when name error-->
+       <div *ngIf="f.submitted && name.invalid">
+          <div class="invalid-input" *ngIf="name.errors?.required">Field is required</div>
+       </div>
+    </div>
+    </div>
+    <!--Surname input-->
+    <div class="field">
+    <label class="label">Surname</label>
+    <div class="control">
+      <input class="input" name="surname" type="text" placeholder="Surname"
+      [(ngModel)]="model.surname"
+      #surname="ngModel"
+       [ngClass]="{'is-danger': f.submitted && surname.invalid}"
+       required/>
+       <!--Div when surname error-->
+       <div *ngIf="f.submitted && surname.invalid">
+          <div class="invalid-input" *ngIf="surname.errors?.required">Field is required</div>
+       </div>
+    </div>
+    </div>
+    <!--username input-->
+    <div class="field">
+      <label class="label">Username</label>
+      <div class="control">
+        <input class="input" name="surname" type="text" placeholder="username"
+        [(ngModel)]="login.username"
+        #username="ngModel"
+         [ngClass]="{'is-danger': f.submitted && username.invalid}"
+         required/>
+         <!--Div when surname error-->
+         <div *ngIf="f.submitted && username.invalid">
+            <div class="invalid-input" *ngIf="username.errors?.required">Field is required</div>
+         </div>
+      </div>
+      </div>
+        <!--Email input-->
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" name="email" placeholder="email"
+            [(ngModel)]="model.email"
+            #email="ngModel"
+            [ngClass]="{'is-danger': f.submitted && email.invalid}"
+            required email/>
+            <!--Div when email error-->
+            <div *ngIf="f.submitted && email.invalid">
+              <div class="invalid-input" *ngIf="email.errors?.required">Field is required</div>
+              <div class="invalid-input" *ngIf="email.errors?.email">Field is not valid Email</div>
+            </div>
+          </div>
+        </div>
+    <!--Pesel input-->
+    <div class="field">
+    <label class="label">Pesel</label>
+    <div class="control">
+      <input class="input" name="pesel" placeholder="pesel"
+      [(ngModel)]="model.pesel"
+      [(ngModel)]="login.user_password"
+      #pesel="ngModel"
+      [ngClass]="{'is-danger': f.submitted && pesel.invalid}"
+      required />
+      <!--Div when pesel error-->
+      <div *ngIf="f.submitted && pesel.invalid">
+        <div class="invalid-input" *ngIf="pesel.errors?.required">Field is required</div>
+      </div>
+    </div>
+    </div>
+    <!--PhoneNumber input-->
+    <div class="field">
+      <label class="label">Phone Number</label>
+      <div class="control">
+        <input class="input" name="phoneNumber" placeholder="phone number"
+        [(ngModel)]="model.phoneNumber"
+        #phoneNumber="ngModel" 
+        [ngClass]="{'is-danger': f.submitted && phoneNumber.invalid}"
+        required />
+      <!--Div when phoneNumber error-->
+      <div *ngIf="f.submitted && phoneNumber.invalid">
+        <div class="invalid-input" *ngIf="phoneNumber.errors?.required">Field is required</div>
+      </div>
+      </div>
+    </div>
+    <!--Address input-->
+    <div class="field">
+      <label class="label">Address</label>
+      <div class="control">
+        <input class="input" name="address" placeholder="address" 
+        [(ngModel)]="model.address"
+        #address="ngModel" 
+        [ngClass]="{'is-danger': f.submitted && address.invalid}"
+        required />
+      <!--Div when address error-->
+      <div *ngIf="f.submitted && address.invalid">
+        <div class="invalid-input" *ngIf="address.errors?.required">Field is required</div>
+      </div>
+      </div>
+      </div>
+      <!--English level group input-->
+    <div class="field">
+      <label class="label">Grupa</label>
+      <div class="control">
+        <input class="input" name="english_group" placeholder="grupa" 
+        [(ngModel)]="model.english_group"
+        #english_group="ngModel" 
+        [ngClass]="{'is-danger': f.submitted && english_group.invalid}"
+        required />
+      <!--Div when group error-->
+      <div *ngIf="f.submitted && english_group.invalid">
+        <div class="invalid-input" *ngIf="english_group.errors?.required">Field is required</div>
+      </div>
+      </div>
+      </div>
+      <!--Checkbox-->
+    <!--Submit button-->
+    <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Accept
+      </button>
+    </p>
+    </div>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+
