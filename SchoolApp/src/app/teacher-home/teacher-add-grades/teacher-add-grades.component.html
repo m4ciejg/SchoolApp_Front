@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+
+<br><br><br><br>
+<div class="columns  is-centered ">
+    <div class="column is-12 is-offset-3">
+        <div class="field">
+            <label class="label">Uczniowie</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option (click)= "getSelectedDropdown(value)" *ngFor="let user of users">{{user.name}} {{user.surname}}
+                    
+                  </option>
+                </select>
+              </div>
+            </div>
+        </div>
+        <!-- Wyswietlic po wybraniu przez ucznia -->
+        <table class="table">
+            <thead>
+              <tr>
+                <th> Imie</th>
+                <th> Nazwisko</th>
+                <th> Oceny</th>
+                <th>Średnia ocen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.surname}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+          </table>
+        
+</div>
+</div>
+
+<app-footer></app-footer>

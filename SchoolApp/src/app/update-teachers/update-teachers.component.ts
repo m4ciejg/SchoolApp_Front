@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Teachers } from '../model/teachers';
 import { ApiService } from '../services/api.service';
-import { Alert } from 'selenium-webdriver';
-import { students } from '../model/students';
 
 @Component({
-  selector: 'app-update-user',
-  templateUrl: './update-user.component.html',
-  styleUrls: ['./update-user.component.css']
+  selector: 'app-update-teachers',
+  templateUrl: './update-teachers.component.html',
+  styleUrls: ['./update-teachers.component.css']
 })
-export class UpdateUserComponent implements OnInit {
+export class UpdateTeachersComponent implements OnInit {
 
-  users: students[] = [];
+  users: Teachers[] = [];
   
   constructor(private apiService: ApiService) { }
 
@@ -19,18 +18,18 @@ export class UpdateUserComponent implements OnInit {
   }
 
   public getAllUsers(){
-    this.apiService.getAllUsers().subscribe(
+    this.apiService.getAllTeachers().subscribe(
       res => {
         this.users = res;
       },
       err =>{
-        alert("Nie udało się załadować uczniów");
+        alert("Nie udało się załadować nauczycieli");
       } 
     );
   }
 
-  updateUsers(updatedUser: students){
-    this.apiService.addUser(updatedUser).subscribe(
+  updateUsers(updatedUser: Teachers){
+    this.apiService.addTeacher(updatedUser).subscribe(
       res => {   
       },
       err => {
@@ -39,9 +38,9 @@ export class UpdateUserComponent implements OnInit {
     );
   }
 
-  deleteUser(user: students){
+  deleteUser(user: Teachers){
     if(confirm("Jesteś pewny że chcesz usunąć użytkownika?")){
-      this.apiService.deleteUser(user.id).subscribe(
+      this.apiService.deleteTeacher(user.id).subscribe(
         res => {
           let indexOfUser = this.users.indexOf(user);
           this.users.splice(indexOfUser, 1);

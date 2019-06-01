@@ -17,6 +17,10 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { BasicAuthHttpInterceptorService } from './services/basic-auth-http-interceptor.service';
 import { StudentHomeComponent } from './student-home/student-home.component';
 import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { ViewTeachersComponent } from './view-teachers/view-teachers.component';
+import { UpdateTeachersComponent } from './update-teachers/update-teachers.component';
+import { TeacherAddGradesComponent } from './teacher-home/teacher-add-grades/teacher-add-grades.component';
 //import { FontAwesome} from './node_modules/FontAwesome';
 
 @NgModule({
@@ -31,8 +35,12 @@ import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
     LoginComponent,
     UpdateUserComponent,
     StudentHomeComponent,
-    TeacherHomeComponent
-  ],
+    TeacherHomeComponent,
+    AddTeacherComponent,
+    ViewTeachersComponent,
+    UpdateTeachersComponent,
+    TeacherAddGradesComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -11,7 +11,6 @@
         <th> Numer telefonu</th>
         <th> Adres</th>
         <th> Email</th>
-        <th> Grupa</th>
         <th class="has-text-danger">Usuń</th>
       </tr>
     </thead>
@@ -22,7 +21,6 @@
         <td><input class="input-label is-small" type="text" [(ngModel)]="user.phoneNumber" (change)="updateUsers(user)"></td>
         <td><input class="input-label is-small" type="text" [(ngModel)]="user.address" (change)="updateUsers(user)"></td>
         <td><input class="input-label is-small" type="text" [(ngModel)]="user.email" (change)="updateUsers(user)"></td>
-        <td><input class="input-label is-small" type="text" [(ngModel)]="user.english_group" (change)="updateUsers(user)"></td>
         <p class="buttons">
                <a (click)="deleteUser(user)"><span class="button is-danger">Usuń</span></a>
         </p>    

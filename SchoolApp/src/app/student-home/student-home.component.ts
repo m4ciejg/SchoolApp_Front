@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentsTeachers } from '../model/students-teachers';
 import { LoginAndPassword } from '../model/login-and-password';
 import { ApiService } from '../services/api.service';
+import { students } from '../model/students';
 
 @Component({
   selector: 'app-student-home',
@@ -10,7 +10,7 @@ import { ApiService } from '../services/api.service';
 })
 export class StudentHomeComponent implements OnInit {
 
-  users: StudentsTeachers[] = []
+  users: students[] = []
   grade: LoginAndPassword[] = []
 
   constructor(private apiService: ApiService) {}

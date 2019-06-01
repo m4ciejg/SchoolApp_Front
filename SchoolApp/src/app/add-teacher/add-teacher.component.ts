@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../services/api.service';
 import { LoginAndPassword } from '../model/login-and-password';
-import { students } from '../model/students';
+import { ApiService } from '../services/api.service';
+import { Teachers } from '../model/teachers';
 
 @Component({
-  selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  selector: 'app-add-teacher',
+  templateUrl: './add-teacher.component.html',
+  styleUrls: ['./add-teacher.component.css']
 })
-export class AddUserComponent implements OnInit {
-  model: students = {
+export class AddTeacherComponent implements OnInit {
+  model: Teachers = {
     id: 0,
     name: '',
     surname: '',
     pesel: '',
     phoneNumber:'',
     address:'',
-    email:'',
-    english_group:''
+    email:''
   };
 
   login: LoginAndPassword = {
@@ -35,7 +34,7 @@ export class AddUserComponent implements OnInit {
   }
   
   send(){
-    this.apiService.addUser(this.model).subscribe(
+    this.apiService.addTeacher(this.model).subscribe(
       res => {
           alert("Użytkownik został dodany do bazy danych z informacjami");
           //location.reload();
@@ -58,10 +57,5 @@ sendToLoginPasswordEntity(){
     }
   );
 }
-
- 
- //wypisz(event: any){
-   //alert(this.model.occupation);
- //}
 
 }

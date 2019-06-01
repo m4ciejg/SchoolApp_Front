@@ -8,18 +8,22 @@
       <tr>
         <th> Imie</th>
         <th> Nazwisko</th>
-        <th> Srednia ocen</th>
-        <th> Dodaj ocenę</th>
+        <th> Ocena</th>
+        <th> Ocena</th>
+        <th> Ocena</th>
+        <th>Średnia ocen</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{user.name}}</td>
-        <td>{{user.surname}}</td>
-        <td>3.2</td>
-        <p class="buttons">
-          <a (click)="dodajOcene(user)"><span class="button is-warning">Dodaj</span></a>
-        </p>
+          <td><input class=" input-label is-small" type="text" [(ngModel)]="user.name" (change)="updateGrade(user)"></td>
+          <td><input class="input-label is-small" type="text" [(ngModel)]="user.surname" (change)="updateGrade(user)"></td>
+          <!--Oceny poniżej-->
+          <td><input class="input-label is-small" type="text" [(ngModel)]="oceny.grades" (change)="updateGrade(user)"></td>
+          <td><input class="input-label is-small" type="text" [(ngModel)]="oceny.grades" (change)="updateGrade(user)"></td>
+          <td><input class="input-label is-small" type="text" [(ngModel)]="oceny.grades" (change)="updateGrade(user)"></td>
+
+
     </tr>
     </tbody>
   </table>

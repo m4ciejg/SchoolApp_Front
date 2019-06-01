@@ -9,6 +9,10 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { StudentHomeComponent } from './student-home/student-home.component';
 import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { ViewTeachersComponent } from './view-teachers/view-teachers.component';
+import { UpdateTeachersComponent } from './update-teachers/update-teachers.component';
+import { TeacherAddGradesComponent } from './teacher-home/teacher-add-grades/teacher-add-grades.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent}, //default component to display
@@ -16,12 +20,16 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   //secretary, headMaster
   {path:'viewUsers', component: ViewUserComponent, canActivate:[AuthGuardService]},
+  {path:'viewTeacher', component: ViewTeachersComponent, canActivate:[AuthGuardService]},
   {path:'addUser', component: AddUserComponent, canActivate:[AuthGuardService]},
+  {path:'addTeacher', component: AddTeacherComponent, canActivate:[AuthGuardService]},
   {path:'updateUser',component: UpdateUserComponent, canActivate:[AuthGuardService]},
+  {path:'updateTeacher', component: UpdateTeachersComponent, canActivate:[AuthGuardService]},
   //Student
   {path:'studentHome', component:StudentHomeComponent, canActivate:[AuthGuardService]},
   //Teacher
   {path:'teacherHome', component:TeacherHomeComponent, canActivate:[AuthGuardService]},
+  {path:'teacherAddGrades', component:TeacherAddGradesComponent, canActivate:[AuthGuardService]},
   //NotFound
   {path:'**', component:NotFoundComponent}
 ];

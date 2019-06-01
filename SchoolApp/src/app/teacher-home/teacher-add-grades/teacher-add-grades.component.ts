@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../services/authentication.service';
+import { students } from 'src/app/model/students';
+import { LoginAndPassword } from 'src/app/model/login-and-password';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
-import { ApiService } from '../services/api.service';
-import { LoginAndPassword } from '../model/login-and-password';
-import { LoginComponent } from '../login/login.component';
-import { students } from '../model/students';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-teacher-home',
-  templateUrl: './teacher-home.component.html',
-  styleUrls: ['./teacher-home.component.css']
+  selector: 'app-teacher-add-grades',
+  templateUrl: './teacher-add-grades.component.html',
+  styleUrls: ['./teacher-add-grades.component.css']
 })
-export class TeacherHomeComponent implements OnInit {
-
+export class TeacherAddGradesComponent implements OnInit {
   users: students[] = []
   grade: LoginAndPassword[] = []
-
   constructor(private authentication: AuthenticationService,
               private router: Router,
               private apiService: ApiService) { }
@@ -35,4 +32,5 @@ export class TeacherHomeComponent implements OnInit {
       } 
     );
   }
+
 }

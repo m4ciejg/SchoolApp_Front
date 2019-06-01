@@ -1,4 +1,4 @@
-export interface StudentsTeachers {
+export interface Teachers {
     id: number;
     name: String;
     surname: String;
@@ -6,5 +6,4 @@ export interface StudentsTeachers {
     phoneNumber: String;
     address: String;
     email: String;
-    english_group: String;
 }

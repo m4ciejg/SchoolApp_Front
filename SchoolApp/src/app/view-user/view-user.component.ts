@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { StudentsTeachers } from '../model/students-teachers';
 import { ApiService } from '../services/api.service';
+import { students } from '../model/students';
 
 @Component({
   selector: 'app-view-user',
@@ -9,7 +9,7 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./view-user.component.css']
 })
 export class ViewUserComponent implements OnInit {
-  users: StudentsTeachers[] = [];
+  users: students[] = [];
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class ViewUserComponent implements OnInit {
         this.users = res;
       },
       err =>{
-        alert("Shit happend");
+        alert("Nie udało się pobrać uczniów");
       } 
     );
   }
