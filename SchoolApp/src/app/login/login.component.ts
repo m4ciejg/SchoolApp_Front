@@ -22,8 +22,7 @@ export class LoginComponent implements OnInit {
     id: 0,
     username:'',
     user_password:'',
-    grade:'',
-    comment:''
+    grade:''
   };
 
   constructor(private loginService: AuthenticationService,

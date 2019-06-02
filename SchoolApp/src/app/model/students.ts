@@ -7,4 +7,5 @@ export interface students {
     address: String;
     email: String;
     english_group: String;
+    grade: String;
 }

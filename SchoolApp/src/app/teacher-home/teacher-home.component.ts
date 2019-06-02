@@ -14,7 +14,8 @@ import { students } from '../model/students';
 export class TeacherHomeComponent implements OnInit {
 
   users: students[] = []
-  grade: LoginAndPassword[] = []
+  grades: LoginAndPassword[] = []
+
 
   constructor(private authentication: AuthenticationService,
               private router: Router,
@@ -22,10 +23,11 @@ export class TeacherHomeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllUsers()
+    this.getAllGrades()
   }
 
 
-  public getAllUsers(){
+  private getAllUsers(){
     this.apiService.getAllUsers().subscribe(
       res => {
         this.users = res;
@@ -33,6 +35,40 @@ export class TeacherHomeComponent implements OnInit {
       err =>{
         alert("Nie udało się pobrać uczniów");
       } 
+    );
+  }
+
+  private getAllGrades(){
+    this.apiService.getLoginandPassword().subscribe(
+      res => {
+        this.grades = res;
+        console.log(res)
+      },
+      err => {
+        alert("Nie udało się załadować ocen")
+      }
+    );
+  }
+
+  updateGrade(updateGrades: LoginAndPassword){
+    this.apiService.addLoginAndPassword(updateGrades).subscribe(
+      res => {   
+        console.log(res)
+      },
+      err => {
+        alert("Błąd podczas modyfikacji ocen");
+      }
+    );
+  }
+
+  updateUser(updateUser: students){
+    this.apiService.addUser(updateUser).subscribe(
+      res => {   
+        console.log(res)
+      },
+      err => {
+        alert("Błąd podczas modyfikacji ocen");
+      }
     );
   }
 }

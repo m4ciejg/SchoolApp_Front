@@ -23,8 +23,7 @@ export class AddTeacherComponent implements OnInit {
     id: 0,
     username:'',
     user_password:'',
-    grade:'',
-    comment:''
+    grade:''
   };
 
 

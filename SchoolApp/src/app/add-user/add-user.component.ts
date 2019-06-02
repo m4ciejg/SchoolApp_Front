@@ -24,8 +24,7 @@ export class AddUserComponent implements OnInit {
     id: 0,
     username:'',
     user_password:'',
-    grade:'',
-    comment:''
+    grade:''
   };
 
 

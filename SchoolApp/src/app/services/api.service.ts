@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { students } from '../model/students';
 import { LoginAndPassword } from '../model/login-and-password';
 import { Teachers } from '../model/teachers';
-import { Grades } from '../model/grades';
 
 @Injectable({
   providedIn: 'root'
@@ -53,24 +52,7 @@ export class ApiService {
      return this.http.get(this.ALL_TEACHERS_URL + "/" + id)
    }
 
-    //##############Students Grades###########
-    getAllGrades(): Observable<Grades[]>{
-      return this.http.get<Grades[]>(this.ALL_GRADES_URL);
-     }
-     
-     addGrade(user: Grades): Observable<any>{
-      return this.http.post(this.ALL_GRADES_URL,user);
-     }
-  
-     deleteGrade(id: number): Observable<any>{
-       return this.http.delete(this.ALL_GRADES_URL +"/" + id);
-     }
-     
-     getGradeByUserId(id: number): Observable<any>{
-       return this.http.get(this.ALL_GRADES_URL + "/" + id)
-     }
-
-   //##############LOGIN AND PASSWORD###########
+   //##############LOGIN AND PASSWORD, Grades are also here###########
    
    //method to get login and passwod from rest end point as plain text 
    getLoginandPassword():Observable<LoginAndPassword[]>{
@@ -81,14 +63,15 @@ export class ApiService {
     return this.http.post(this.ADD_LOGIN_URL, login);
    }
 
-   getUserById(id: number): Observable<any>{
+   getLoginAndPasswordById(id: number): Observable<any>{
     return this.http.get(this.ADD_LOGIN_URL +"/" + id);
   }
 
+  deleteLoginAndPasswordById(id: number): Observable<any>{
+    return this.http.delete(this.ADD_LOGIN_URL + "/" + id)
+  }
 
-   //updateUser(user: StudentsTeachers): Observable<any>{
-    // return this.http.put(this.UPDATE_USERS_URL+'/'+ StudentsTeachers.id, user);
-   //}
-
-  // updateUser(user: StudentsTeachers): Obs
+  updateLoginAndPassword(login: LoginAndPassword): Observable<any>{
+    return this.http.put(this.ADD_LOGIN_URL, login)
+  }
 }

@@ -6,25 +6,35 @@
 <table class="table">
     <thead>
       <tr>
-        <th> Imie</th>
+        <th> Imię</th>
         <th> Nazwisko</th>
-        <th> Ocena</th>
-        <th> Ocena</th>
-        <th> Ocena</th>
-        <th>Średnia ocen</th>
+        <th> Grupa</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-          <td><input class=" input-label is-small" type="text" [(ngModel)]="user.name" (change)="updateGrade(user)"></td>
-          <td><input class="input-label is-small" type="text" [(ngModel)]="user.surname" (change)="updateGrade(user)"></td>
-          <!--Oceny poniżej-->
-          <td><input class="input-label is-small" type="text" [(ngModel)]="oceny.grades" (change)="updateGrade(user)"></td>
-          <td><input class="input-label is-small" type="text" [(ngModel)]="oceny.grades" (change)="updateGrade(user)"></td>
-          <td><input class="input-label is-small" type="text" [(ngModel)]="oceny.grades" (change)="updateGrade(user)"></td>
+        <td>{{user.name}}</td>
+        <td>{{user.surname}}</td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.english_group" (change)="updateUser(user)"></td>
+        <td><input class="input-label is-small" type="text" [(ngModel)]="user.english_group" (change)="updateUser(user)"></td>
+      </tr>
+    LRY2P45
+    </tbody>
+  </table>
 
+  <!--Table with grades-->
 
-    </tr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Oceny</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let g of grades">
+        <td><input class="input-label is-small" type="text" [(ngModel)]="g.grade" (change)="updateGrade(g)"></td>
+      </tr>
+    LRY2P45
     </tbody>
   </table>
 </div>

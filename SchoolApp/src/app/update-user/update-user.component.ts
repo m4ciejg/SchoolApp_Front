@@ -32,6 +32,7 @@ export class UpdateUserComponent implements OnInit {
   updateUsers(updatedUser: students){
     this.apiService.addUser(updatedUser).subscribe(
       res => {   
+        console.log(res)
       },
       err => {
         alert("Błąd bazy danych, modyfikacja nie powiodła się");

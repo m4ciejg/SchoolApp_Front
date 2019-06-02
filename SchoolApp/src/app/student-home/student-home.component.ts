@@ -17,7 +17,7 @@ export class StudentHomeComponent implements OnInit {
 
   ngOnInit() {
     this.getPersonalInfoById()
-    this.getGradeById()
+    //this.getGradeById()
   }
 
   getPersonalInfoById(){
@@ -32,7 +32,7 @@ export class StudentHomeComponent implements OnInit {
   }
   
 
-  getGradeById(){
+  /*getGradeById(){
     this.apiService.getUserById(Number(sessionStorage.getItem('id'))).subscribe(
       res => {
         this.grade = res;
@@ -41,5 +41,5 @@ export class StudentHomeComponent implements OnInit {
         alert("Nie udało się pobrać ocen")
       }
     );
-  }
+  }*/
 }
